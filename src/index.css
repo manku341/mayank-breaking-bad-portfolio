@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080A08;
+}
+::-webkit-scrollbar-thumb {
+  background: #202A22;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #80CC28;
+}
+
+/* CRT Scanline Effect (subtle lab monitor) */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Periodic Element Square */
+.periodic-square {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #151A16;
+  border: 2px solid #80CC28;
+  box-shadow: 0 0 15px rgba(128, 204, 40, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.periodic-square:hover {
+  border-color: #B5E853;
+  box-shadow: 0 0 25px rgba(181, 232, 83, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Grid background texture */
+.lab-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(32, 42, 34, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 42, 34, 0.35) 1px, transparent 1px);
+}
+
+/* Vignette overlay */
+.vignette-overlay {
+  background: radial-gradient(circle at center, transparent 30%, rgba(8, 10, 8, 0.85) 90%);
+  pointer-events: none;
+}
+
+/* Glowing text highlight */
+.glow-text {
+  text-shadow: 0 0 20px rgba(128, 204, 40, 0.6);
+}
+
+.glow-text-amber {
+  text-shadow: 0 0 20px rgba(229, 169, 60, 0.6);
+}
+
+/* Noise texture via CSS gradient */
+.grain-overlay {
+  background-image: radial-gradient(rgba(128, 204, 40, 0.03) 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
